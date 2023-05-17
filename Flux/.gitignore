@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/.vs
+/.sonarqube
+/SEECT.SaberRH.WebApi/.config
+/SEECT.SaberRH.WebApi/Logs
+/SEECT.SaberRH.WebApi/Logs/*
+
+
+\.vs/
+bin/
+obj/
+Dockerfile
