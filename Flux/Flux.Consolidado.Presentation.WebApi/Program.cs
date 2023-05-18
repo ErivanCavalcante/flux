@@ -1,6 +1,12 @@
+using Flux.Consolidado.Domain.Application;
+using Flux.Consolidado.Infrastructure.Storage;
+using Flux.Consolidado.Presentation.WebApi.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddApplication();
+builder.Services.AddStorage(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -16,7 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.MapControllers();
 

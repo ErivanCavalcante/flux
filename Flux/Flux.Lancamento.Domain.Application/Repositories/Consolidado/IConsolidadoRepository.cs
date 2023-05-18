@@ -6,9 +6,9 @@ namespace Flux.Lancamento.Domain.Application.Repositories.Consolidado
     public interface IConsolidadoRepository
     {
         [Get("/consolidado/ultimo")]
-        Task<UltimoConsolidadoDto> PegaUltimo();
+        Task<ApiResponse<UltimoConsolidadoDto>> PegaUltimo();
 
         [Post("/consolidado")]
-        Task CriarConsolidado(CriarConsolidadoDto consolidado);
+        Task<ApiResponse<bool>> CriarConsolidado(CriarConsolidadoDto consolidado);
     }
 }

@@ -1,12 +1,36 @@
 {
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5003"
+    "BaseUrl": "http://localhost:5000"
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/writers",
+      "UpstreamPathTemplate": "/movimentacao",
       "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/writers",
+      "DownstreamPathTemplate": "/api/movimentacao",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/movimentacao",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/movimentacao",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/consolidado",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/consolidado",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -14,6 +38,6 @@
           "Port": 5002
         }
       ]
-    },
+    }
   ]
 }

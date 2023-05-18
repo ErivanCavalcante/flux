@@ -4,8 +4,12 @@ namespace Flux.Consolidado.Domain.Entity.Entities
 {
     public class Consolidado : BaseEntity
     {
-        public float Valor { get; set; }
-        public float ValorMes { get; set; }
-        public float ValorAno { get; set; }
+        public float Saldo { get; set; }
+
+        public Consolidado()
+        {
+            Id = Guid.Empty;
+            Saldo = 0.0f;
+        }
     }
 }

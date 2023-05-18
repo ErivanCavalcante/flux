@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lancamento", "Lancamento", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D0D0AE34-BB55-4A1E-AB00-FAE6AFF9D342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Gateway.Presentation.WebApi", "Flux.Gateway.Presentation.WebApi\Flux.Gateway.Presentation.WebApi.csproj", "{347A6360-E249-4ECD-9F39-98989683A8B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Gateway.Presentation.WebApi", "Flux.Gateway.Presentation.WebApi\Flux.Gateway.Presentation.WebApi.csproj", "{347A6360-E249-4ECD-9F39-98989683A8B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AEFA55CE-5F67-4BF5-9DF1-CB8E61A1C871}"
 EndProject
@@ -25,17 +25,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{557B3F41-B312-4525-8F58-AC85B6B00AD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Lancamento.Presentation.WebApi", "Flux.Lancamento.Presentation.WebApi\Flux.Lancamento.Presentation.WebApi.csproj", "{AEBC6433-FD86-4AE4-B65C-89EE623ECA85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Lancamento.Presentation.WebApi", "Flux.Lancamento.Presentation.WebApi\Flux.Lancamento.Presentation.WebApi.csproj", "{AEBC6433-FD86-4AE4-B65C-89EE623ECA85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Presentation.WebApi", "Flux.Consolidado.Presentation.WebApi\Flux.Consolidado.Presentation.WebApi.csproj", "{50552ED7-A73A-4196-BA00-35F567D55329}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Consolidado.Presentation.WebApi", "Flux.Consolidado.Presentation.WebApi\Flux.Consolidado.Presentation.WebApi.csproj", "{50552ED7-A73A-4196-BA00-35F567D55329}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Lancamento.Domain.Entity", "Flux.Lancamento.Domain.Entity\Flux.Lancamento.Domain.Entity.csproj", "{B36A3B82-5403-4242-8C48-2495FF7F4AFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Lancamento.Domain.Entity", "Flux.Lancamento.Domain.Entity\Flux.Lancamento.Domain.Entity.csproj", "{B36A3B82-5403-4242-8C48-2495FF7F4AFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Domain.Entity", "Flux.Consolidado.Domain.Entity\Flux.Consolidado.Domain.Entity.csproj", "{E77B5F0C-032E-439F-AD42-9B589543146E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Consolidado.Domain.Entity", "Flux.Consolidado.Domain.Entity\Flux.Consolidado.Domain.Entity.csproj", "{E77B5F0C-032E-439F-AD42-9B589543146E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Lancamento.Domain.Application", "Flux.Lancamento.Domain.Application\Flux.Lancamento.Domain.Application.csproj", "{76D2A9CC-4A0A-41FD-A01E-1C638546B216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Lancamento.Domain.Application", "Flux.Lancamento.Domain.Application\Flux.Lancamento.Domain.Application.csproj", "{76D2A9CC-4A0A-41FD-A01E-1C638546B216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Lancamento.Infrastructure.Storage", "Flux.Lancamento.Infrastructure.Storage\Flux.Lancamento.Infrastructure.Storage.csproj", "{79E9A59B-A1F0-47A2-AFFB-83CD00589773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Lancamento.Infrastructure.Storage", "Flux.Lancamento.Infrastructure.Storage\Flux.Lancamento.Infrastructure.Storage.csproj", "{79E9A59B-A1F0-47A2-AFFB-83CD00589773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Domain.Application", "Flux.Consolidado.Domain.Application\Flux.Consolidado.Domain.Application.csproj", "{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Infrastructure.Storage", "Flux.Consolidado.Infrastructure.Storage\Flux.Consolidado.Infrastructure.Storage.csproj", "{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,14 @@ Global
 		{79E9A59B-A1F0-47A2-AFFB-83CD00589773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79E9A59B-A1F0-47A2-AFFB-83CD00589773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79E9A59B-A1F0-47A2-AFFB-83CD00589773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +102,8 @@ Global
 		{E77B5F0C-032E-439F-AD42-9B589543146E} = {53EA1EAA-23DD-4DF7-B924-CAF8C5EE9218}
 		{76D2A9CC-4A0A-41FD-A01E-1C638546B216} = {AEFA55CE-5F67-4BF5-9DF1-CB8E61A1C871}
 		{79E9A59B-A1F0-47A2-AFFB-83CD00589773} = {FD05FD7A-3553-47B7-90B7-354ED057598C}
+		{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56} = {53EA1EAA-23DD-4DF7-B924-CAF8C5EE9218}
+		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE} = {84A171E9-A677-4884-AE2C-FA07A8E07432}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00042B14-2188-45BE-8E60-9508E894181C}

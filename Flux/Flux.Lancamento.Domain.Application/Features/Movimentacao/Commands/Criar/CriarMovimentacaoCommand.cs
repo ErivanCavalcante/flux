@@ -30,24 +30,28 @@ namespace Flux.Lancamento.Domain.Application.Features.Movimentacao.Commands.Cria
                 // Pega o ultimo saldo
                 var consolidado = await _consolidadoRepository.PegaUltimo();
 
+                if (!consolidado.IsSuccessStatusCode) throw new Exception("Erro ao consultar o consolidado.");
+
                 var movimentacao = new MovimentacaoEntity();
 
                 if (request.tipo == TipoMovimentacao.RECEITA)
                 {
-                    movimentacao.AdicionarReceita(request.descricao, request.valor, consolidado.Valor);
+                    movimentacao.AdicionarReceita(request.descricao, request.valor, consolidado.Content.Valor);
                 }
                 else
                 {
-                    movimentacao.AdicionarDespesa(request.descricao, request.valor, consolidado.Valor);
+                    movimentacao.AdicionarDespesa(request.descricao, request.valor, consolidado.Content.Valor);
                 }
 
                 await _movimentacaoRepository.CreateAsync(movimentacao);
 
-                await _consolidadoRepository.CriarConsolidado(new CriarConsolidadoDto
+                var result = await _consolidadoRepository.CriarConsolidado(new CriarConsolidadoDto
                 {
                     TipoMovimentacao = movimentacao.TipoMovimentacao.ToString(),
                     Valor = movimentacao.Valor,
                 });
+
+                if (!result.IsSuccessStatusCode) throw new Exception("Erro ao salvar o consolidado.");
 
                 _transacaoService.Comitar();
 
