@@ -1,0 +1,20 @@
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side">
+        <div class="logo">
+            <img src="https://img.favpng.com/3/3/25/computer-icons-user-material-design-business-login-png-favpng-XtCyNJTCfVkwab47dcf7ErQuX.jpg"
+                alt="User">
+            <h4>Flux</h4>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-button color="white" routerLink="/"><mat-icon>dashboard</mat-icon> Dashboard</button>
+        <button mat-button color="white" routerLink="/movimentacao"><mat-icon>money</mat-icon> Movimentação</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <span>{{currentPageTitle}}</span>
+        </mat-toolbar>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
