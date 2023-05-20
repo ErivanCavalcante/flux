@@ -37,9 +37,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Lancamento.Domain.Appl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Lancamento.Infrastructure.Storage", "Flux.Lancamento.Infrastructure.Storage\Flux.Lancamento.Infrastructure.Storage.csproj", "{79E9A59B-A1F0-47A2-AFFB-83CD00589773}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Domain.Application", "Flux.Consolidado.Domain.Application\Flux.Consolidado.Domain.Application.csproj", "{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Consolidado.Domain.Application", "Flux.Consolidado.Domain.Application\Flux.Consolidado.Domain.Application.csproj", "{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Infrastructure.Storage", "Flux.Consolidado.Infrastructure.Storage\Flux.Consolidado.Infrastructure.Storage.csproj", "{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flux.Consolidado.Infrastructure.Storage", "Flux.Consolidado.Infrastructure.Storage\Flux.Consolidado.Infrastructure.Storage.csproj", "{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{12978D92-F85D-494A-A3BC-FA512ABF2B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Lancamento.Test", "Flux.Test.Test\Flux.Lancamento.Test.csproj", "{E3871AAB-B549-487F-9964-8F5C666A93BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{26FBA715-3500-419D-BAB2-5BD21B4EBCE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flux.Consolidado.Test", "Flux.Consolidado.Test\Flux.Consolidado.Test.csproj", "{E743D08D-A581-4A91-8933-427C2B1652D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +91,14 @@ Global
 		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3871AAB-B549-487F-9964-8F5C666A93BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3871AAB-B549-487F-9964-8F5C666A93BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3871AAB-B549-487F-9964-8F5C666A93BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3871AAB-B549-487F-9964-8F5C666A93BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E743D08D-A581-4A91-8933-427C2B1652D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E743D08D-A581-4A91-8933-427C2B1652D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E743D08D-A581-4A91-8933-427C2B1652D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E743D08D-A581-4A91-8933-427C2B1652D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +120,10 @@ Global
 		{79E9A59B-A1F0-47A2-AFFB-83CD00589773} = {FD05FD7A-3553-47B7-90B7-354ED057598C}
 		{6A34E381-252F-4EF7-B87C-D2F0F6BC1B56} = {53EA1EAA-23DD-4DF7-B924-CAF8C5EE9218}
 		{F70B4D68-8BC9-4B0C-87AD-3C8D849B38AE} = {84A171E9-A677-4884-AE2C-FA07A8E07432}
+		{12978D92-F85D-494A-A3BC-FA512ABF2B99} = {0989118E-4316-4BDF-9D56-31ECF5FF887D}
+		{E3871AAB-B549-487F-9964-8F5C666A93BA} = {12978D92-F85D-494A-A3BC-FA512ABF2B99}
+		{26FBA715-3500-419D-BAB2-5BD21B4EBCE4} = {E74F10D9-A0C7-40BA-9EB5-DEDFBC457DD1}
+		{E743D08D-A581-4A91-8933-427C2B1652D8} = {26FBA715-3500-419D-BAB2-5BD21B4EBCE4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00042B14-2188-45BE-8E60-9508E894181C}
