@@ -38,6 +38,30 @@
           "Port": 5002
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/consolidado/ano",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/consolidado/ano",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/consolidado/dia",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/consolidado/dia",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ]
     }
   ]
 }
