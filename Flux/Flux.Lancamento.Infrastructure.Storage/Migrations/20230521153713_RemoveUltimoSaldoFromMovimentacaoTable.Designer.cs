@@ -3,6 +3,7 @@ using System;
 using Flux.Lancamento.Infrastructure.Storage.Configs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Flux.Lancamento.Infrastructure.Storage.Migrations
 {
     [DbContext(typeof(MovimentacaoContext))]
-    partial class MovimentacaoContextModelSnapshot : ModelSnapshot
+    [Migration("20230521153713_RemoveUltimoSaldoFromMovimentacaoTable")]
+    partial class RemoveUltimoSaldoFromMovimentacaoTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");

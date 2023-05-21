@@ -6,51 +6,43 @@ using Flux.Lancamento.Domain.Application.Repositories.Consolidado;
 using Flux.Lancamento.Domain.Application.Repositories;
 using Flux.Lancamento.Domain.Application.Features.Shared.Responses.Consolidado;
 
-namespace Flux.Lancamento.Domain.Application.Features.Movimentacao.Commands.Criar
+namespace Flux.Lancamento.Domain.Application.Features.Movimentacao.Commands.Deletar
 {
-    public class CriarMovimentacaoCommand : IRequestHandler<CriarMovimentacaoRequest>
+    public class DeletarMovimentacaoCommand : IRequestHandler<DeletarMovimentacaoRequest>
     {
         private readonly ITransacaoService _transacaoService;
         private readonly IConsolidadoRepository _consolidadoRepository;
         private readonly IMovimentacaoRepository _movimentacaoRepository;
 
-        public CriarMovimentacaoCommand(ITransacaoService transacaoService, IConsolidadoRepository consolidadoRepository, IMovimentacaoRepository movimentacaoRepository)
+        public DeletarMovimentacaoCommand(ITransacaoService transacaoService, IConsolidadoRepository consolidadoRepository, IMovimentacaoRepository movimentacaoRepository)
         {
             _transacaoService = transacaoService;
             _consolidadoRepository = consolidadoRepository;
             _movimentacaoRepository = movimentacaoRepository;
         }
 
-        public async Task Handle(CriarMovimentacaoRequest request, CancellationToken cancellationToken)
+        public async Task Handle(DeletarMovimentacaoRequest request, CancellationToken cancellationToken)
         {
             _transacaoService.Iniciar();
 
             try
             {
-                var movimentacao = new MovimentacaoEntity();
+                var movimentacao = await _movimentacaoRepository.GetByIdAsync(request.id)
+                    ?? throw new Exception("Movimentação não encontrada.");
 
-                if (request.tipo == TipoMovimentacao.RECEITA)
-                {
-                    movimentacao.AdicionarReceita(request.descricao, request.valor);
-                }
-                else
-                {
-                    movimentacao.AdicionarDespesa(request.descricao, request.valor);
-                }
-
-                await _movimentacaoRepository.CreateAsync(movimentacao);
-
+                // Cria o consolidado com o inverso da movimentacao
                 var result = await _consolidadoRepository.CriarConsolidado(new CriarConsolidadoDto
                 {
-                    TipoMovimentacao = movimentacao.TipoMovimentacao.ToString(),
+                    TipoMovimentacao = movimentacao.TipoMovimentacao == TipoMovimentacao.RECEITA ? 
+                        TipoMovimentacao.DESPESA.ToString() : TipoMovimentacao.RECEITA.ToString(),
                     Valor = movimentacao.Valor,
                 });
 
                 if (!result.IsSuccessStatusCode) throw new Exception("Erro ao salvar o consolidado.");
 
-                _transacaoService.Comitar();
+                await _movimentacaoRepository.DeleteAsync(movimentacao.Id);
 
-                // Ajusta o sistema para quando dar erro no servico de consolidar reverter td
+                _transacaoService.Comitar();
             }
             catch (Exception ex)
             {

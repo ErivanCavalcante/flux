@@ -1,13 +1,24 @@
 <mat-sidenav-container>
     <mat-sidenav opened mode="side">
         <div class="logo">
-            <img src="https://img.favpng.com/3/3/25/computer-icons-user-material-design-business-login-png-favpng-XtCyNJTCfVkwab47dcf7ErQuX.jpg"
-                alt="User">
+            <img src="../../../../assets/fluxo_caixa.png" alt="User">
             <h4>Flux</h4>
         </div>
         <mat-divider></mat-divider>
-        <button mat-button color="white" routerLink="/"><mat-icon>dashboard</mat-icon> Dashboard</button>
-        <button mat-button color="white" routerLink="/movimentacao"><mat-icon>money</mat-icon> Movimentação</button>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/">
+                <div class="menu-item">
+                    <mat-icon style="margin-right: 5px;">dashboard</mat-icon> Dashboard
+                </div>
+            </a>
+            <a mat-list-item routerLink="/movimentacao">
+                <div class="menu-item">
+                    <mat-icon style="margin-right: 5px;">money</mat-icon> Movimentação
+                </div>
+            </a>
+        </mat-nav-list>
+        <!-- <button mat-button color="white" routerLink="/"></button>
+        <button mat-button color="white" routerLink="/movimentacao"></button> -->
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar>

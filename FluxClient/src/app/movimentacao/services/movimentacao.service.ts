@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { MovimentacaoListDto } from '../models/movimentacao-list.dto';
 import { MovimentacaoCreateDto } from '../models/movimentacao-create.dto';
 import { environment } from '../../../environments/environment';
+import { MovimentacaoUpdateDto } from '../models/movimentacao-update.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,13 @@ export class MovimentacaoService {
 
   public create(dto: MovimentacaoCreateDto) {
     return this.http.post(`${this.BASE_API}/movimentacao`, dto);
+  }
+
+  public update(dto: MovimentacaoUpdateDto) {
+    return this.http.put(`${this.BASE_API}/movimentacao`, dto);
+  }
+
+  public delete(id: string) {
+    return this.http.delete(`${this.BASE_API}/movimentacao/${id}`);
   }
 }

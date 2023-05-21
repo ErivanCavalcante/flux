@@ -17,7 +17,6 @@ export class MovimentacaoCreatePageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private movimentacaoService: MovimentacaoService,
     private router: Router) {
-
   }
 
   ngOnInit(): void {

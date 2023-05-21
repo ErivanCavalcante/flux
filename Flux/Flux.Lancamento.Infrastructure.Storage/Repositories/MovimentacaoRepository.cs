@@ -22,7 +22,6 @@ namespace Flux.Lancamento.Domain.Application.Repositories
                     Id = x.Id,
                     TipoMovimentacao = x.TipoMovimentacao.ToString(),
                     Valor = x.Valor,
-                    UltimoSaldo = x.UltimoSaldo,
                     Descricao = x.Descricao,
                     Data = x.DataCriacao,
                 })

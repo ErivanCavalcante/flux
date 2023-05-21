@@ -22,10 +22,6 @@ namespace Flux.Lancamento.Infrastructure.Storage.Mappings
                 .HasColumnName("valor")
                 .IsRequired();
 
-            builder.Property(x => x.UltimoSaldo)
-                .HasColumnName("ultimo_saldo")
-                .IsRequired();
-
             builder.Property(x => x.Descricao)
                 .HasColumnName("descricao")
                 .IsRequired();

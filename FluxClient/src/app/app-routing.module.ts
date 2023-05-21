@@ -13,14 +13,17 @@ const routes: Routes = [
       {
         path: 'movimentacao',
         component: MovimentacaoListPageComponent,
+        data: { title: 'Movimentação' },
       },
       {
         path: 'movimentacao/criar',
         component: MovimentacaoCreatePageComponent,
+        data: { title: 'Movimentação' },
       },
       {
         path: '',
         component: DashboardPageComponent,
+        data: { title: 'Dashboard' },
       },
     ]
   }

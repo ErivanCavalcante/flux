@@ -24,9 +24,12 @@ mat-divider {
     margin-top: 0;
 }
 
-button {
-    display: block;
-    width: 100%;
+.menu-item {
+    color: white;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: start !important;
+    align-items: center !important;
 }
 
 .logo {
@@ -41,8 +44,8 @@ button {
 
 .logo img {
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
 }
 
 h4,
