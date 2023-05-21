@@ -1,1 +1,43 @@
-<p>dashboard-page works!</p>
+<mat-card>
+    <mat-card-header>
+        <div class="card-title">
+            <h2>Consolidado Anual</h2>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="abrirDialogo()">Filtrar</button>
+            </mat-menu>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div class="chart">
+            <ngx-charts-bar-vertical [view]="[1000,400]" [results]="dadosAnuaisSource" [xAxisLabel]="'Meses'"
+                [legendTitle]="'Meses'" [yAxisLabel]="'Saldo'" [legend]="true" [showXAxisLabel]="true"
+                [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true">
+            </ngx-charts-bar-vertical>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="card">
+    <div class="card-title">
+        <h2>Consolidado Diário</h2>
+        <button mat-icon-button [matMenuTriggerFor]="menuDiario">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menuDiario="matMenu">
+            <button mat-menu-item (click)="abrirDialogo()">Filtrar</button>
+        </mat-menu>
+    </div>
+
+    <mat-card-content>
+        <div class="chart">
+            <ngx-charts-line-chart [view]="[1000,400]" [results]="dadosDiariosSource" [xAxisLabel]="'Horas'"
+                [yAxisLabel]="'Saldo'" [legend]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxis]="true"
+                [yAxis]="true" [gradient]="true">
+            </ngx-charts-line-chart>
+        </div>
+    </mat-card-content>
+</mat-card>

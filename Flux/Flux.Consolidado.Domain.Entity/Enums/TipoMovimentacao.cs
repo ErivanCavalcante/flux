@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace Flux.Consolidado.Domain.Entity.Enums
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TipoMovimentacao
     {
         [Description("Receita")]

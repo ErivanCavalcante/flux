@@ -1,3 +1,10 @@
 .button-wrapper {
     margin-top: 20px;
 }
+
+.valor-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}

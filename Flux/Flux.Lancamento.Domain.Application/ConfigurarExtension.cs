@@ -11,7 +11,7 @@ namespace Flux.Lancamento.Domain.Application
         {
             services.AddRefitClient<IConsolidadoRepository>().ConfigureHttpClient(c =>
             {
-                c.BaseAddress = new Uri("http://localhost:5002/");
+                c.BaseAddress = new Uri("http://localhost:5002/api");
             });
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CriarMovimentacaoRequest).Assembly));
