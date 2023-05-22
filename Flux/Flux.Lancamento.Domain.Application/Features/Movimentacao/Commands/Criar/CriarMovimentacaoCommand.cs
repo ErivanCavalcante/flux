@@ -8,7 +8,7 @@ using Flux.Lancamento.Domain.Application.Features.Shared.Responses.Consolidado;
 
 namespace Flux.Lancamento.Domain.Application.Features.Movimentacao.Commands.Criar
 {
-    public class CriarMovimentacaoCommand : IRequestHandler<CriarMovimentacaoRequest>
+    public class CriarMovimentacaoCommand : IRequestHandler<CriarMovimentacaoRequest, bool>
     {
         private readonly ITransacaoService _transacaoService;
         private readonly IConsolidadoRepository _consolidadoRepository;
@@ -21,7 +21,7 @@ namespace Flux.Lancamento.Domain.Application.Features.Movimentacao.Commands.Cria
             _movimentacaoRepository = movimentacaoRepository;
         }
 
-        public async Task Handle(CriarMovimentacaoRequest request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(CriarMovimentacaoRequest request, CancellationToken cancellationToken)
         {
             _transacaoService.Iniciar();
 
@@ -50,7 +50,7 @@ namespace Flux.Lancamento.Domain.Application.Features.Movimentacao.Commands.Cria
 
                 _transacaoService.Comitar();
 
-                // Ajusta o sistema para quando dar erro no servico de consolidar reverter td
+                return true;
             }
             catch (Exception ex)
             {

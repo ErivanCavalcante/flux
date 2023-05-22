@@ -25,7 +25,7 @@ namespace Flux.Lancamento.Presentation.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Criar([FromBody] CriarMovimentacaoRequest request)
         {
-            return await Execute(request);
+            return await Execute<CriarMovimentacaoRequest, bool>(request);
         }
 
         [HttpPut]
