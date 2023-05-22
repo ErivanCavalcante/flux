@@ -22,12 +22,14 @@ Sistema de gerenciamento de entradas e saídas para o desafio da Indra Company (
 5. Selecionar o checkbox de ação para iniciar nos seguintes projetos: Flux.Gateway.Presentation.WebApi, Flux.Movimentacao.Presentation.WebApi, Flux.Consolidado.Presentation.WebApi
 6. Clicar em aplicar e executar o projeto
 
-## Breve descrição da solução
+## Descrição da solução
 
 ![](/flux-flow.png)
 
 O sistema é dividido em dois projetos os quais são: projeto cliente desenvolvido em Angular 15 e o projeto de back-end feito em Dotnet core.
 O projeto de back-end foi estruturado como microserviços tendo 3 partes principais: Gateway, serviço de movimentação e o serviço de consolidado.
+Os sistemas Flux.Movimentacao e Flux.Consolidado usam a arquitetura de software limpa onde as camadas tem as dependências a seguir: Entity > Application > Infrastructure > WebApi.
+O projeto Entity e Application formam o domínio da aplicação contento todas as regras de negócio. O projeto Application foi desenvolvido usando o padrão de projeto CQRS.
 
 ### Responsabilidade dos serviços de back-end
 
