@@ -30,3 +30,14 @@ O sistema é dividido em dois projetos os quais são: projeto cliente desenvolvi
 O projeto de back-end foi estruturado como microserviços tendo 3 partes principais: Gateway, serviço de movimentação e o serviço de consolidado.
 
 ### Responsabilidade dos serviços de back-end
+
+#### Flux.Gateway
+
+A responsabilidade desse projeto é centralizar as requisições vindo do cliente e redirencionar para os serviços correspondentes.
+
+#### Flux.Movimentacao
+
+A responsabilidade desse projeto é gerenciar as entradas e saidas de dinheiro. Ao registrar qualquer movimentação o sistema se comunica com o serviço de consolidado para manter o histórico.
+
+#### Flux.Consolidado
+A responsabilidade desse projeto é gerenciar o histórico de consolidado. Além disso tem a função de gerar todo o relatório e gráficos do saldo consolidado anual e diário.
