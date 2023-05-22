@@ -1,14 +1,16 @@
 <h1 mat-dialog-title>Filtro</h1>
 <div mat-dialog-content>
     <p>Escolha uma data</p>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker">
-        <mat-hint>MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" formControlName="data">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
 </div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancelar</button>
-    <button mat-button (click)="filtrar()" cdkFocusInitial>Ok</button>
+    <button mat-button (click)="filtrar()" cdkFocusInitial [disabled]="!ativiarBotaoFiltrar()">Ok</button>
 </div>

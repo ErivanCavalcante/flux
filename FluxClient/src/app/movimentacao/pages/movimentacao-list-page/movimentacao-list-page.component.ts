@@ -38,8 +38,10 @@ export class MovimentacaoListPageComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogConfirmarDeletarComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result === true) {
-        this.movimentacaoService.delete(item.id);
+      if (result == true) {
+        this.movimentacaoService.delete(item.id).subscribe(deleted => {
+          this.getAll();
+        });
       }
     });
   }

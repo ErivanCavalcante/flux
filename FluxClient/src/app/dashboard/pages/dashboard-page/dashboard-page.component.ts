@@ -32,29 +32,36 @@ export class DashboardPageComponent {
 
   pegarPorAno(data?: Date) {
     this.consolidadoService.getByAno(data).subscribe(result => {
-      console.log(result);
       this.dadosAnuaisSource = result;
     });
   }
 
   pegarPorDia(data?: Date) {
     this.consolidadoService.getByDay(data).subscribe(result => {
-      console.log(result);
       this.dadosDiariosSource = [
         {
           name: "Saldo consolidado",
           "series": result as any,
         },
       ];
-      this.dadosAnuaisSource = result;
     });
   }
 
-  public abrirDialogo(): void {
+  public abrirDialogo(filtro: string): void {
     const dialogRef = this.dialog.open(DialogDatepickerComponent);
 
     dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        const date = new Date(result);
 
+        console.log(date);
+        if (filtro == 'ANO') {
+          this.pegarPorAno(date);
+        }
+        else {
+          this.pegarPorDia(date);
+        }
+      }
     });
   }
 }
